@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0
 
       - name: Set up XeLaTeX
-        uses: xu-cheng/latex-action@latest
+        uses: xu-cheng/latex-action@v3
         with:
           latexmk_use_xelatex: true
 
