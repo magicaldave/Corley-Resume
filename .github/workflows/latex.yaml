@@ -15,15 +15,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up XeLaTeX
+      - name: Compile Resume
         uses: xu-cheng/latex-action@v3
         with:
           latexmk_use_xelatex: true
+          root_file: dcresume.tex
 
-      - name: Compile LaTeX document
-        run: xelatex dcresume.tex
-
-      - name: Create Release
+      - name: Release Resume
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
