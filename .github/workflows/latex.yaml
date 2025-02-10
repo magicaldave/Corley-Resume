@@ -18,7 +18,7 @@ jobs:
       - name: Set up XeLaTeX
         uses: dante-ev/latex-action@latest
         with:
-          engine: xelatex
+          latexmk_use_xelatex: true
 
       - name: Compile LaTeX document
         run: xelatex dcresume.tex
