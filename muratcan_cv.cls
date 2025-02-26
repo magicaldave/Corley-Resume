@@ -14,6 +14,7 @@
 \RequirePackage{tikz}
 \RequirePackage{fontspec}
 \RequirePackage[left=0.75in,top=0.3in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\RequirePackage{xcolor}
 \RequirePackage{hyperref}
 \RequirePackage{fontawesome}
 \RequirePackage{mfirstuc}
@@ -40,9 +41,14 @@
 \newcommand*{\setcontactperson}[1]{\def\@contactperson{#1}}
 \newcommand*{\setclaimedposition}[1]{\def\@claimedposition{#1}}
 
+\definecolor{s3base}{HTML}{3d004c}
+\colorlet{s3light}{s3base!70!white}
+\colorlet{s3dark}{s3base!70!black}
+\colorlet{s3link}{magenta!70!black}
+
 \hypersetup{
     colorlinks=true,
-    urlcolor=cyan,
+    urlcolor=s3link,
 }
 
 % View commands
