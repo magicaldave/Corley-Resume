@@ -48,18 +48,22 @@
 
 % View commands
 % Header
-
-% can makebox also be used?
 \newcommand\headerview{
-\begin{minipage}{0.25\linewidth}
-    \profpic{0.5}{profilepicture}
-\end{minipage}% 
-\hfill
-\begin{minipage}{0.45\linewidth}
-    \center \name \\[0.05cm] 
-    \contact % address \ mobile \\ mail
-\end{minipage}
+    % Left column: Profile picture, aligned to the left
+    \begin{minipage}{0.25\linewidth}
+        \raggedright
+        \profpic{0.5}{profilepicture}
+    \end{minipage}%
+    \hspace*{\fill}
+    % Right column: Name and contact details, aligned to the right
+    \begin{minipage}{0.7\linewidth}
+        \raggedleft
+        \textbf{\huge \name} \\[0.1cm]
+        \contact
+    \end{minipage}
 }
+
+
 
 %profilpicture
 
