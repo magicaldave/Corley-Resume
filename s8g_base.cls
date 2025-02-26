@@ -1,12 +1,9 @@
-% Created by Murat Can Karacabey
-% this is inspired by Michael Pollind's Awesome CV 
-% Created from scratch as a much simpler alternative to it to actually learn LaTeX.
-% Might be interpreted as an easier-to-edit or easier-to-understand-what-is-going-on version of it.
-\author{Murat Can Karacabey}
-\RequirePackage[dvipsnames]{xcolor} % moved here I guess article class causes option clash with xcolor if used after loading the class
+% Derivative of https://github.com/muratcankaracabey/latex_cv
+\author{Dave Corley}
+\RequirePackage[dvipsnames]{xcolor}
 \LoadClass[11pt]{article}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{muratcan_cv}[2020/04/15 Muratcan CV Class]
+\ProvidesClass{s8g_base}[S3kshun8 Games Document Base]
 \RequirePackage[sfdefault]{noto}
 \RequirePackage{etoolbox}
 \RequirePackage{pgffor}
@@ -14,7 +11,6 @@
 \RequirePackage{tikz}
 \RequirePackage{fontspec}
 \RequirePackage[left=0.75in,top=0.3in,right=0.75in,bottom=0.6in]{geometry} % Document margins
-\RequirePackage{xcolor}
 \RequirePackage{hyperref}
 \RequirePackage{fontawesome}
 \RequirePackage{mfirstuc}
@@ -23,28 +19,27 @@
 \RequirePackage{array}
 \pagestyle{empty}
 
-%Setup
+% Defined in order of appearance
+\def\@firstname{Dave}
+\def\@lastname{Corley}
+\def\@address{Phoenix, AZ}
+\def\@mail{S3kshun8.Games@proton.me}
+\def\@position{UI/UX Designer}
+\def\@themecolor{magenta}
+\def\@githubaccount{https://github.com/magicaldave}
+\def\@linkedinaccount{https://www.linkedin.com/in/s3kshun8}
+\def\@gitlabaccount{https://gitlab.com/magicaldave1}
 
-\newcommand*{\setname}[2]{\def\@firstname{#1}\def\@lastname{#2}}
-\newcommand*{\setaddress}[1]{\def\@address{#1}}
-\newcommand*{\setmobile}[1]{\def\@mobile{#1}}
-\newcommand*{\setposition}[1]{\def\@position{#1}}
-\newcommand*{\setmail}[1]{\def\@mail{#1}}
-\newcommand*{\setthemecolor}[1]{\def\@themecolor{#1}}
-\newcommand*{\setlinkedinaccount}[1]{\def\@linkedinaccount{#1}}
-\newcommand*{\setgithubaccount}[1]{\def\@githubaccount{#1}}
-\newcommand*{\setgitlabaccount}[1]{\def\@gitlabaccount{#1}}
+\definecolor{s3base}{HTML}{3d004c}
+\colorlet{s3light}{s3base!70!white}
+\colorlet{s3dark}{s3base!70!black}
+\colorlet{s3link}{magenta!70!black}
 
 %Setup for coverletter
 
 \newcommand*{\setcompanyname}[1]{\def\@companyname{#1}}
 \newcommand*{\setcontactperson}[1]{\def\@contactperson{#1}}
 \newcommand*{\setclaimedposition}[1]{\def\@claimedposition{#1}}
-
-\definecolor{s3base}{HTML}{3d004c}
-\colorlet{s3light}{s3base!70!white}
-\colorlet{s3dark}{s3base!70!black}
-\colorlet{s3link}{magenta!70!black}
 
 \hypersetup{
     colorlinks=true,
