@@ -18,7 +18,7 @@ jobs:
       - name: Compile Resume
         uses: xu-cheng/latex-action@v3
         with:
-          latexmk_use_xelatex: true
+          latexmk_use_pdflatex: true
           root_file: dcresume.tex
 
       - name: Release Resume
