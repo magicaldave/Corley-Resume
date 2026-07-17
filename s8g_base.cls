@@ -80,8 +80,8 @@
 %contactsubviews 
     
     
-\newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedinIn\ \footnotesize LinkedIn}}
-\newcommand{\linkedinview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize GitHub}}
+\newcommand{\githubview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize GitHub}}
+\newcommand{\linkedinview}{\href{\@linkedinaccount}{\faLinkedinIn\ \footnotesize LinkedIn}}
 \newcommand{\gitlabview}{\href{\@gitlabaccount}{\faGitlab\ \footnotesize GitLab}}
 
 \newcommand{\name}{%
