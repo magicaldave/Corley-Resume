@@ -1,0 +1,54 @@
+% Variant: customer-facing engineering, technical support, and integration.
+\documentclass{resume}
+\resumetitle{Customer Solutions Engineer}
+\resumekeywords{Customer solutions engineering, technical support, Tier 2, troubleshooting, application support, client communication, customer success, systems integration, API automation, Rust, C++, Luau}
+\begin{document}
+\makeheader
+
+\section{Summary}
+\summary{Customer-facing software engineer with previous Tier 2 technical support and frontline customer
+service experience. I investigate hardware and software issues, explain technical problems in practical terms,
+and build integrations, developer tooling and automation in Rust, C++ and Lua/Luau. My work spans
+customer-visible editor improvements, cross-platform tools and a Discord/GitHub engineering assistant.}
+
+\section{Technical Capabilities}
+\skill{Support and communication}{Tier 2 troubleshooting, complex case ownership, issue triage and escalation,
+mentoring new teammates, user-focused problem solving}
+\skill{Integrations and automation}{GitHub and Discord integrations, LLM tool-calling workflows, developer
+utilities, command-line tooling, CI/CD, offline test suites}
+\skill{Engineering}{Rust, C++, Lua / Luau, Bash; Git, Linux, Windows, macOS, GitHub Actions}
+
+% Put paid customer-facing experience ahead of independent engineering work.
+\input{content/experience}
+
+\section{Selected Engineering Work}
+
+\entry{Rook}{Luau engineering assistant for Discord and GitHub}{Independent \textperiodcentered{} proprietary \textperiodcentered{} 2026}
+\entrymeta{DreamWeave. Private source; releases 0.1.0 to 0.3.2 tagged. Built on my Jess runtime.}
+\begin{bullets}
+  \item Designed an assistant that answers engineering questions in Discord and reads and reviews GitHub pull requests, issues and CI, connecting conversational workflows to technical project context.
+  \item Enforced reviewed permissions outside model prompts, guarded ambiguous writes against accidental retries, and added usage receipts and budgets. Tested failure behavior in 83 offline cases with mock models.
+\end{bullets}
+
+\entry{OpenMW}{C++ game engine and user-facing editor}{Open source \textperiodcentered{} merged upstream}
+\entrymeta{\href{https://gitlab.com/OpenMW/openmw}{gitlab.com/OpenMW/openmw} \textperiodcentered{} \href{https://openmw.org/2024/from-bsp-to-esp-how-s3ctor-abused-quake-editors-to-redefine-the-morrowind-modding-experience/}{OpenMW blog feature}}
+\begin{bullets}
+  \item Improved editor workflows with object movement in OpenMW-CS (\href{https://gitlab.com/OpenMW/openmw/-/merge_requests/3675}{!3675}) and unified instance drop modes with an in-editor tooltip (\href{https://gitlab.com/OpenMW/openmw/-/merge_requests/4350}{!4350}); fixed plugin-save behavior affecting cell water height and journal records.
+\end{bullets}
+
+\entry{Jess}{Luau application runtime and developer toolchain}{Independent \textperiodcentered{} open source \textperiodcentered{} 2026}
+\entrymeta{\href{https://github.com/DreamWeave-MP/jess}{github.com/DreamWeave-MP/jess} \textperiodcentered{} \href{https://crates.io/crates/jess}{crates.io/crates/jess}}
+\begin{bullets}
+  \item Built a single-binary runtime, type checker, test runner, package tool and style checker in Rust and Luau; shipped signed archives for Linux, macOS, Windows and ARM64 devices.
+\end{bullets}
+
+\entry{vfstool and StroggForge}{troubleshooting and release automation}{Independent \textperiodcentered{} open source}
+\entrymeta{\href{https://github.com/DreamWeave-MP/vfstool}{github.com/DreamWeave-MP/vfstool} \textperiodcentered{} \href{https://github.com/DreamWeave-MP/StroggForge}{github.com/DreamWeave-MP/StroggForge}}
+\begin{bullets}
+  \item Built a virtual-file-system command-line tool with a lockfile drift check for CI; also built shared release workflows that package, portability-check, sign and scan Rust project artifacts.
+\end{bullets}
+
+\input{content/education}
+
+\makefooter
+\end{document}

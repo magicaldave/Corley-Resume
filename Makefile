@@ -1,4 +1,4 @@
-# Build both resume variants and check them.
+# Build all resume variants and check them.
 #
 #   make            build dist/*.pdf and run the checks
 #   make pdf        build only
@@ -11,7 +11,7 @@
 # Override personal details for one build:
 #   make LOCATION="Tulsa, OK" EMAIL=me@example.com PHONE="555 0100"
 
-VARIANTS := ai-automation systems-engineering
+VARIANTS := ai-automation systems-engineering customer-engineering
 SLUG     ?= Dave-Corley-Resume
 
 # CI writes VERSION and SOURCE_DATE_EPOCH here; local builds ask git.
