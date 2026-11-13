@@ -1,0 +1,56 @@
+% Variant: backend, platform and services engineering.
+% Every claim here already appears, with its source, in docs/EVIDENCE.md.
+% Nothing about databases, cloud providers or languages not listed there.
+\documentclass{resume}
+\resumetitle{Backend Software Engineer -- Services, Platforms and Reliability}
+\resumekeywords{backend engineering, services, APIs, integrations, Rust, C++, Lua, Luau, Linux, CI/CD, GitHub Actions, reliability, testing, open source}
+\begin{document}
+\makeheader
+
+\section{Summary}
+\summary{Backend engineer working mainly in Rust on Linux. I build services and runtimes that fail safely:
+authorization enforced in code, writes that are never blindly retried, files that survive a crash, and
+releases that are signed and checked before they ship. Previously Tier 2 technical support, so I know what a
+failure looks like from the user's side. Core contributor to the OpenMW engine.}
+
+\section{Technical Capabilities}
+\skill{Services and integrations}{GitHub and Discord APIs, LLM APIs with tool calling, permission and grant
+models, budgets and rate limits, receipts and audit trails, offline test suites against mock services}
+\skill{Languages and platform}{Rust, C++, Lua / Luau, Bash; Linux, GitHub Actions (reusable workflows, composite actions), GitLab CI,
+Podman and Docker, Cargo, CMake, Sigstore Cosign, cross-platform releases for Linux, Windows, macOS and ARM64}
+
+\section{Selected Engineering Work}
+
+\entry{Rook}{integration service for Discord and GitHub, in Luau}{Independent \textperiodcentered{} proprietary \textperiodcentered{} 2026}
+\entrymeta{DreamWeave. Private source; releases 0.1.0 to 0.3.2 tagged; \verify{not yet in production use}. Runs on my own runtime, Jess.}
+\begin{bullets}
+  \item Built a service that answers engineering questions in Discord and reads and reviews GitHub pull requests, issues and CI, calling an LLM API with tool use.
+  \item Enforced authorization in code: every outbound action is checked against a version-controlled grant ledger, reread before each decision. A malformed grant is ignored and reported, never widened.
+  \item Made writes safe to retry: an ambiguous GitHub write (timeout, 5xx, crash) is recorded as a durable intent and blocks any repeat until an operator reconciles it. Added per-request receipts, daily budgets and an emergency stop; 83 offline failure tests against a mock model.
+\end{bullets}
+
+\entry{Jess}{application runtime and toolchain for Luau, in Rust}{Independent \textperiodcentered{} open source \textperiodcentered{} 2026}
+\entrymeta{\href{https://github.com/DreamWeave-MP/jess}{github.com/DreamWeave-MP/jess} \textperiodcentered{} \href{https://crates.io/crates/jess}{crates.io/crates/jess} \textperiodcentered{} MIT or Apache-2.0 \textperiodcentered{} v0.1.0 (21 Oct 2026) to v0.3.0 (5 Nov 2026)}
+\begin{bullets}
+  \item Designed an immutable package archive pinned by digest in a lockfile, so a build is reproducible from its lockfile alone. Added authenticated ranged file reads and crash-durable file creation in 0.3.0.
+  \item Shipped runtime, test runner, type checker, package tool and style checker as one binary, with signed release archives for Linux x64, macOS ARM64 and x64, Windows x64 and ARM64.
+\end{bullets}
+
+\entry{StroggForge}{shared build and release infrastructure}{Independent \textperiodcentered{} open source \textperiodcentered{} 2026}
+\entrymeta{\href{https://github.com/DreamWeave-MP/StroggForge}{github.com/DreamWeave-MP/StroggForge} \textperiodcentered{} GitHub Actions, Bash}
+\begin{bullets}
+  \item Built the reusable workflows and release action every DreamWeave Rust project shares: build, portability check, keyless Cosign signing, VirusTotal scan, publish. Consumers pin a tag, so one version bump rolls a fix out everywhere.
+  \item Held Linux releases to a glibc 2.34 baseline by building in a CentOS Stream 9 image, and cross-compiled ARM64 against an EL9 sysroot.
+\end{bullets}
+
+\entry{OpenMW}{open-source game engine, C++}{Open source \textperiodcentered{} merged upstream}
+\entrymeta{\href{https://gitlab.com/OpenMW/openmw}{gitlab.com/OpenMW/openmw} \textperiodcentered{} described on the project's blog as a core developer (\href{https://openmw.org/2024/from-bsp-to-esp-how-s3ctor-abused-quake-editors-to-redefine-the-morrowind-modding-experience/}{Nov 2024})}
+\begin{bullets}
+  \item Got changes merged into a large C++ codebase through upstream code review: editor features (\href{https://gitlab.com/OpenMW/openmw/-/merge_requests/3675}{!3675}, \href{https://gitlab.com/OpenMW/openmw/-/merge_requests/4350}{!4350}) and save-path fixes so plugins record water height and journal records correctly.
+\end{bullets}
+
+\input{content/experience}
+\input{content/education}
+
+\makefooter
+\end{document}

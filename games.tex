@@ -1,0 +1,68 @@
+% Variant: game engine, tools and scripting programming.
+% Every claim here already appears, with its source, in docs/EVIDENCE.md.
+\documentclass{resume}
+\resumetitle{Game Engine and Tools Programmer -- C++, Rust and Lua/Luau}
+\resumekeywords{game engine, tools programming, scripting, Lua, Luau, C++, Rust, OpenMW, level editor, modding tools, build and release, cross-platform, game design}
+\begin{document}
+\makeheader
+
+\section{Summary}
+\summary{Engine and tools programmer. Core contributor to OpenMW, the open-source Morrowind engine, where my
+editor and save-format work is merged upstream. I build the pieces games run on: Luau scripting embedded in
+native code, level-editor pipelines, modding tools, and the build infrastructure that ships them to Linux,
+Windows, macOS and ARM64 handhelds. Trained in AR/VR engineering and game design at Holberton.}
+
+\section{Technical Capabilities}
+\skill{Languages}{C++, Rust, Lua / LuaJIT / Luau, Bash}
+\skill{Engine and scripting}{embedding script VMs (hand-written C API bindings, FFI), JIT hooks, type
+definitions for script APIs, asset and plugin formats, virtual file systems, editor tooling}
+\skill{Build and release}{CMake, Cargo, clang and lld with cross-language LTO, ARM64 cross-compilation,
+GitHub Actions, GitLab CI, signed releases including PortMaster for ARM64 handhelds}
+
+\section{Selected Engineering Work}
+
+\entry{OpenMW}{open-source reimplementation of the Morrowind engine, C++}{Open source \textperiodcentered{} merged upstream}
+\entrymeta{\href{https://gitlab.com/OpenMW/openmw}{gitlab.com/OpenMW/openmw} \textperiodcentered{} described on the project's blog as a core developer (\href{https://openmw.org/2024/from-bsp-to-esp-how-s3ctor-abused-quake-editors-to-redefine-the-morrowind-modding-experience/}{Nov 2024})}
+\begin{bullets}
+  \item Added object movement to the OpenMW-CS level editor (\href{https://gitlab.com/OpenMW/openmw/-/merge_requests/3675}{!3675}) and unified instance drop modes with an in-editor tooltip (\href{https://gitlab.com/OpenMW/openmw/-/merge_requests/4350}{!4350}).
+  \item Fixed the plugin save path so cell water height is saved whenever the user changes it and journal records are written first.
+  \item \verify{Prototyped a networking layer and headless server on the DreamWeave fork, toward upstream multiplayer (not merged).}
+\end{bullets}
+
+\entry{Morrobroom}{level-editor pipeline, in Rust}{Independent \textperiodcentered{} open source}
+\entrymeta{\href{https://github.com/magicaldave/Morrobroom}{github.com/magicaldave/Morrobroom} \textperiodcentered{} featured on the OpenMW blog (Nov 2024)}
+\begin{bullets}
+  \item Compiles TrenchBroom (Quake-format) maps into Morrowind plugins and meshes, turning brush half-spaces into game geometry, so level designers can build in a modern editor.
+\end{bullets}
+
+\entry{l3i}{Luau scripting binder, in Rust and C++}{Independent \textperiodcentered{} open source \textperiodcentered{} 2026}
+\entrymeta{\href{https://github.com/DreamWeave-MP/l3i}{github.com/DreamWeave-MP/l3i} \textperiodcentered{} \href{https://crates.io/crates/l3i}{crates.io/crates/l3i} \textperiodcentered{} 1.0.0 (29 Sep 2026) to 2.7.0 (5 Nov 2026)}
+\begin{bullets}
+  \item Began as my C++ Luau binder for OpenMW. Binds upstream Luau directly from a pinned submodule, with the whole C API declared by hand.
+  \item Plans each VM up front (userdata tags, compiler type slots, atoms) and generates the matching script type definitions from the same plan, so script authors get accurate autocomplete.
+  \item Lowers hot script calls to native code through JIT hooks, and adds a dialect front end whose errors point at the original source.
+\end{bullets}
+
+\entry{Jess}{native runtime for Luau, in Rust}{Independent \textperiodcentered{} open source \textperiodcentered{} 2026}
+\entrymeta{\href{https://github.com/DreamWeave-MP/jess}{github.com/DreamWeave-MP/jess} \textperiodcentered{} \href{https://crates.io/crates/jess}{crates.io/crates/jess} \textperiodcentered{} v0.1.0 (21 Oct 2026) to v0.3.0 (5 Nov 2026)}
+\begin{bullets}
+  \item One binary is the runtime, test runner, type checker, package tool and style checker. The first release shipped signed builds for Linux, macOS, Windows and PortMaster ARM64 handhelds.
+\end{bullets}
+
+\entry{Modding tools: vfstool and S3LightFixes}{for OpenMW players and mod authors, in Rust}{Independent \textperiodcentered{} open source}
+\entrymeta{\href{https://github.com/DreamWeave-MP/vfstool}{github.com/DreamWeave-MP/vfstool} \textperiodcentered{} \href{https://github.com/magicaldave/S3LightFixes}{github.com/magicaldave/S3LightFixes} \textperiodcentered{} listed on modding-openmw.com}
+\begin{bullets}
+  \item vfstool reimplements OpenMW's virtual file system as a library and CLI; S3LightFixes builds a lighting patch from a player's whole load order in one command. Both ship for Linux, Windows and macOS.
+\end{bullets}
+
+\entry{StroggForge}{shared build and release infrastructure}{Independent \textperiodcentered{} open source \textperiodcentered{} 2026}
+\entrymeta{\href{https://github.com/DreamWeave-MP/StroggForge}{github.com/DreamWeave-MP/StroggForge} \textperiodcentered{} GitHub Actions, Bash}
+\begin{bullets}
+  \item Reusable build and release workflows for DreamWeave's projects: portability checks, keyless Cosign signing, VirusTotal scan, publish. ARM64 handheld builds cross-compile against an EL9 sysroot.
+\end{bullets}
+
+\input{content/education}
+\input{content/experience}
+
+\makefooter
+\end{document}

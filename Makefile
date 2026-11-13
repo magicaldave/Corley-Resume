@@ -11,7 +11,7 @@
 # Override personal details for one build:
 #   make LOCATION="Tulsa, OK" EMAIL=me@example.com PHONE="555 0100"
 
-VARIANTS := ai-automation systems-engineering customer-engineering
+VARIANTS := ai-automation systems-engineering customer-engineering backend games
 SLUG     ?= Dave-Corley-Resume
 
 # CI writes VERSION and SOURCE_DATE_EPOCH here; local builds ask git.

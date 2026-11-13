@@ -102,3 +102,11 @@ invented for the independent projects.
   sourced.
 - **Measured outcomes** such as build-time or cache-hit numbers. None were
   found for any project; add them with their source when they exist.
+
+## Backend and games variants
+
+Added 2026-11-13. `backend.tex` and `games.tex` reuse only claims already in
+this ledger, reworded for the role; they add no new facts. The games variant
+carries the same unverified DreamWeave networking prototype as
+`systems-engineering`; the backend variant carries the unverified "not yet in
+production use" note for Rook.

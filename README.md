@@ -1,12 +1,14 @@
 # Corley Resume
 
-Dave Corley's resume, as LaTeX, in three variants built from one set of sources:
+Dave Corley's resume, as LaTeX, in five variants built from one set of sources:
 
 | Variant | For | Output |
 |---|---|---|
 | `ai-automation` | AI integration, automation, developer tooling | `dist/Dave-Corley-Resume-ai-automation.pdf` |
 | `systems-engineering` | Rust, Lua/Luau, runtimes, engine work, cross-platform delivery | `dist/Dave-Corley-Resume-systems-engineering.pdf` |
 | `customer-engineering` | Customer-facing engineering, Tier 2 technical support, integrations, troubleshooting | `dist/Dave-Corley-Resume-customer-engineering.pdf` |
+| `backend` | Backend, platform and services roles: Rust, integrations, reliability, CI/CD | `dist/Dave-Corley-Resume-backend.pdf` |
+| `games` | Game engine, tools and scripting roles: OpenMW, Luau, editor pipelines, modding tools | `dist/Dave-Corley-Resume-games.pdf` |
 
 ## Layout
 
@@ -23,7 +25,7 @@ docs/EVIDENCE.md         where each claim was checked, and what is still open
 ```
 
 Styling, personal details and content never share a file. A new variant is a
-new `name.tex` beside the other two, plus its name in `VARIANTS` in the
+new `name.tex` beside the others, plus its name in `VARIANTS` in the
 Makefile; CI picks it up from there.
 
 ## Build
@@ -31,7 +33,7 @@ Makefile; CI picks it up from there.
 With TeX Live and poppler-utils installed:
 
 ```
-make            # build all three PDFs into dist/ and check them
+make            # build all five PDFs into dist/ and check them
 make review     # build/review/*.pdf with unverified claims highlighted
 make cover      # the cover letter template
 make links      # request every URL in the sources
@@ -74,9 +76,9 @@ source and unwrap it, or cut it. `docs/EVIDENCE.md` lists what is open.
 
 ## Release
 
-Push a tag. CI builds and checks all three variants and attaches the three PDFs to a
+Push a tag. CI builds and checks all five variants and attaches the five PDFs to a
 GitHub release named for the tag. Pushes to `main` and pull requests run the
-same build and keep all three PDFs as workflow artifacts.
+same build and keep all five PDFs as workflow artifacts.
 
 Builds are reproducible: the footer date and the PDF timestamps come from the
 commit, so one commit always produces the same bytes.
