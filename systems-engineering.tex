@@ -1,0 +1,62 @@
+% Variant: runtimes, engine work, cross-platform infrastructure, open source.
+\documentclass{resume}
+\resumetitle{Systems Engineer -- Runtimes, Engines and Cross-Platform Tooling}
+\resumekeywords{Rust, Lua, Luau, LuaJIT, C++, scripting runtimes, game engine, OpenMW, cross-platform, CI/CD, open source, Linux}
+\begin{document}
+\makeheader
+
+\section{Summary}
+\summary{Systems programmer working in Rust, C++ and Lua/Luau. I build scripting runtimes and engine tooling,
+and the build infrastructure that ships them on Linux, Windows, macOS and ARM64. Contributor to the OpenMW
+engine; author of the Jess runtime and the l3i Luau binder. I find the constraint holding a project
+back and build the smallest system that removes it.}
+
+\section{Technical Capabilities}
+\skill{Languages}{Rust, C++, Lua / LuaJIT / Luau, Bash, Python}
+\skill{Runtimes and engines}{binding and embedding script VMs (hand-written C API bindings, FFI), JIT hooks,
+language front ends, capability models, package formats, asset and plugin pipelines}
+\skill{Cross-platform delivery}{Cargo, CMake, clang and lld with cross-language LTO, glibc baselines, ARM64
+cross-compilation, GitHub Actions, GitLab CI, Sigstore Cosign}
+
+\section{Selected Engineering Work}
+
+\entry{Jess}{native application kernel for Luau, in Rust}{Independent \textperiodcentered{} open source \textperiodcentered{} 2026}
+\entrymeta{\href{https://github.com/DreamWeave-MP/jess}{github.com/DreamWeave-MP/jess} \textperiodcentered{} \href{https://crates.io/crates/jess}{crates.io/crates/jess} \textperiodcentered{} MIT or Apache-2.0 \textperiodcentered{} v0.1.0 (21 Oct 2026) to v0.3.0 (5 Nov 2026)}
+\begin{bullets}
+  \item Drew one boundary and held it: Rust owns operating-system and hardware contact, resource lifetimes and trust boundaries; Luau owns application semantics and policy.
+  \item Shipped the whole toolchain as one binary: runtime, test runner, type checker, package tool and style checker. The first release carried signed archives for Linux x64, macOS ARM64 and x64, Windows x64 and PortMaster ARM64.
+  \item Designed an immutable package archive pinned by digest in a lockfile; a workspace packs into one file or a standalone executable. Added authenticated ranged file reads and crash-durable file creation in 0.3.0.
+\end{bullets}
+
+\entry{l3i}{Luau runtime binder, in Rust and C++}{Independent \textperiodcentered{} open source \textperiodcentered{} 2026}
+\entrymeta{\href{https://github.com/DreamWeave-MP/l3i}{github.com/DreamWeave-MP/l3i} \textperiodcentered{} \href{https://crates.io/crates/l3i}{crates.io/crates/l3i} \textperiodcentered{} 1.0.0 (29 Sep 2026) to 2.7.0 (5 Nov 2026)}
+\begin{bullets}
+  \item Binds upstream Luau directly instead of through a general-purpose crate: a pinned submodule built by the build script, with the whole C API declared by hand. Began as my C++ Luau binder for OpenMW.
+  \item Plans every VM before it exists (userdata tags, compiler type slots, atoms) and renders the matching type definitions from the same plan.
+  \item Lowers hot script calls to native code through JIT hooks written in Rust; adds a dialect front end (comprehensions, slices, destructuring) whose tooling reports in original source coordinates.
+\end{bullets}
+
+\entry{OpenMW}{open-source reimplementation of the Morrowind engine, C++}{Open source \textperiodcentered{} merged upstream}
+\entrymeta{\href{https://gitlab.com/OpenMW/openmw}{gitlab.com/OpenMW/openmw} \textperiodcentered{} described on the project's blog as a core developer (\href{https://openmw.org/2024/from-bsp-to-esp-how-s3ctor-abused-quake-editors-to-redefine-the-morrowind-modding-experience/}{Nov 2024})}
+\begin{bullets}
+  \item Merged: object movement in the OpenMW-CS editor (\href{https://gitlab.com/OpenMW/openmw/-/merge_requests/3675}{!3675}); unified instance drop modes with an in-editor tooltip (\href{https://gitlab.com/OpenMW/openmw/-/merge_requests/4350}{!4350}); fixes so cell water height is saved whenever the user changed it and journal records are serialized first when saving plugins.
+  \item \verify{Prototype, not merged: a networking layer and headless server on the DreamWeave fork, toward upstream multiplayer.}
+\end{bullets}
+
+\entry{Morrobroom and vfstool}{engine tooling, in Rust}{Independent \textperiodcentered{} open source}
+\entrymeta{\href{https://github.com/magicaldave/Morrobroom}{github.com/magicaldave/Morrobroom} \textperiodcentered{} \href{https://github.com/DreamWeave-MP/vfstool}{github.com/DreamWeave-MP/vfstool} \textperiodcentered{} \href{https://crates.io/crates/vfstool}{crates.io/crates/vfstool}}
+\begin{bullets}
+  \item Morrobroom compiles TrenchBroom (Quake) maps into Morrowind plugins and meshes, turning brush half-spaces into game geometry (featured on the OpenMW blog). vfstool reimplements OpenMW's virtual file system as a library and CLI for Linux, Windows and macOS, on crates.io and the AUR.
+\end{bullets}
+
+\entry{StroggForge}{shared build and release infrastructure}{Independent \textperiodcentered{} open source \textperiodcentered{} 2026}
+\entrymeta{\href{https://github.com/DreamWeave-MP/StroggForge}{github.com/DreamWeave-MP/StroggForge} \textperiodcentered{} GitHub Actions, Bash}
+\begin{bullets}
+  \item Reusable workflows and a composite release action shared by DreamWeave's Rust projects: build, portability check, keyless Cosign signing, VirusTotal scan, publish. Linux releases hold a glibc 2.34 baseline; ARM64 builds cross-compile.
+\end{bullets}
+
+\input{content/experience}
+\input{content/education}
+
+\makefooter
+\end{document}

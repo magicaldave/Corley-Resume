@@ -1,0 +1,62 @@
+% Variant: AI integration, process automation, development tooling.
+\documentclass{resume}
+\resumetitle{Software Engineer -- AI Integration and Automation}
+\resumekeywords{AI integration, LLM agents, automation, CI/CD, GitHub Actions, Rust, Luau, Lua, developer tooling, Linux}
+\begin{document}
+\makeheader
+
+\section{Summary}
+\summary{Software engineer who builds automation that can be trusted to run unattended: AI agents whose
+permissions are enforced in code instead of in a prompt, release pipelines that sign and scan every artifact,
+and command-line tools that replace manual steps. I work mainly in Rust and Lua/Luau on Linux and contribute
+to the OpenMW game engine.}
+
+\section{Technical Capabilities}
+\skill{AI integration}{LLM APIs, tool-calling agents and task-scoped delegation; permissions, budgets and rate
+limits enforced outside the model; offline testing against mock models}
+\skill{Automation and CI/CD}{GitHub Actions (reusable workflows, composite actions), GitLab CI, Sigstore Cosign,
+Podman and Docker, release packaging for Linux, Windows, macOS and ARM64}
+\skill{Languages and tools}{Rust, Lua / LuaJIT / Luau, C++, Bash, Python; Git, Cargo, CMake}
+
+\section{Selected Engineering Work}
+
+\entry{Rook}{permission-gated AI engineering agent for chat and code review}{Independent \textperiodcentered{} proprietary \textperiodcentered{} 2026}
+\entrymeta{DreamWeave. Private source; releases 0.1.0 to 0.3.2 tagged; \verify{not yet in production use}. Written in Luau on my own runtime, Jess.}
+\begin{bullets}
+  \item Designed an LLM-backed service that answers engineering questions in Discord and reads and reviews pull requests, issues and CI on GitHub, as a native Luau application with no Python or Node agent framework.
+  \item Put authorization in code, not in the prompt: every outbound action is checked against a human-reviewed, version-controlled grant ledger, reread before each decision. A malformed grant is ignored and reported, never widened, and nothing the agent reads at runtime can add one.
+  \item Made failure safe: an instruction profile that no longer matches the SHA-256 of its reviewed sources stops startup, and an ambiguous GitHub write (timeout, 5xx, crash) blocks any repeat until an operator reconciles it.
+  \item Added per-reply receipts (latency, tokens, estimated cost), daily budgets and an emergency stop. Tested offline against a mock model that obeys every injected instruction: 83 cases, run from source and from the packed artifact.
+  \item \verify{Directed the implementation through AI coding agents, against written specifications and acceptance tests.}
+\end{bullets}
+
+\entry{StroggForge}{shared build and release infrastructure}{Independent \textperiodcentered{} open source \textperiodcentered{} 2026}
+\entrymeta{\href{https://github.com/DreamWeave-MP/StroggForge}{github.com/DreamWeave-MP/StroggForge} \textperiodcentered{} GitHub Actions, Bash}
+\begin{bullets}
+  \item Built the reusable workflows and composite release action that DreamWeave's Rust projects share: build, portability check, keyless Cosign signing, VirusTotal scan, publish. Consumers pin a tag, so a fix lands everywhere with one version bump.
+  \item Fixed Linux portability at the source: releases build in a CentOS Stream 9 image to hold a glibc 2.34 baseline, and ARM64 handheld builds cross-compile against an EL9 sysroot.
+\end{bullets}
+
+\entry{Jess}{application runtime for Luau, in Rust}{Independent \textperiodcentered{} open source \textperiodcentered{} 2026}
+\entrymeta{\href{https://github.com/DreamWeave-MP/jess}{github.com/DreamWeave-MP/jess} \textperiodcentered{} \href{https://crates.io/crates/jess}{crates.io/crates/jess} \textperiodcentered{} v0.1.0 (21 Oct 2026) to v0.3.0 (5 Nov 2026)}
+\begin{bullets}
+  \item One binary is the runtime, test runner, type checker, package tool and style checker, so a project's whole toolchain is a single pinned download. The first release carried signed archives for five targets.
+\end{bullets}
+
+\entry{vfstool and S3LightFixes}{command-line tools for OpenMW mod setups, in Rust}{Independent \textperiodcentered{} open source}
+\entrymeta{\href{https://github.com/DreamWeave-MP/vfstool}{github.com/DreamWeave-MP/vfstool} \textperiodcentered{} \href{https://crates.io/crates/vfstool}{crates.io/crates/vfstool} \textperiodcentered{} \href{https://github.com/magicaldave/S3LightFixes}{github.com/magicaldave/S3LightFixes}}
+\begin{bullets}
+  \item vfstool reimplements OpenMW's virtual file system as a library and CLI, with a lock-file drift check that fails a CI job by exit code; S3LightFixes builds a lighting patch from a whole load order in one command. Both ship for Linux, Windows and macOS; S3LightFixes binaries carry Cosign signatures tied to the workflow that built them.
+\end{bullets}
+
+\entry{OpenMW}{open-source game engine, C++}{Open source \textperiodcentered{} merged upstream}
+\entrymeta{\href{https://gitlab.com/OpenMW/openmw}{gitlab.com/OpenMW/openmw} \textperiodcentered{} described on the project's blog as a core developer (\href{https://openmw.org/2024/from-bsp-to-esp-how-s3ctor-abused-quake-editors-to-redefine-the-morrowind-modding-experience/}{Nov 2024})}
+\begin{bullets}
+  \item Merged editor and data-format work: object movement in the OpenMW-CS editor (\href{https://gitlab.com/OpenMW/openmw/-/merge_requests/3675}{!3675}), unified instance drop modes (\href{https://gitlab.com/OpenMW/openmw/-/merge_requests/4350}{!4350}), and fixes to how plugins save water height and journal records.
+\end{bullets}
+
+\input{content/experience}
+\input{content/education}
+
+\makefooter
+\end{document}
