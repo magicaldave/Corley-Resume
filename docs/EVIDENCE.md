@@ -110,3 +110,9 @@ this ledger, reworded for the role; they add no new facts. The games variant
 carries the same unverified DreamWeave networking prototype as
 `systems-engineering`; the backend variant carries the unverified "not yet in
 production use" note for Rook.
+
+## Header location
+
+Changed 2026-11-13 from "Oklahoma, USA" to "Remote (US), relocating to Miami,
+FL" for every variant: the owner is targeting remote US roles and roles in the
+Miami area.
