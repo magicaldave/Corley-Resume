@@ -1,31 +1,78 @@
-name: Compile LaTeX Document and Create Release
+name: Build resume
 
+# Every push and pull request builds and checks both variants. A tag also
+# publishes them as a GitHub release.
 on:
   push:
-    tags:
-      - "*"
+    branches: [main]
+    tags: ["*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
-  build_latex:
+  build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Compile Resume
-        uses: xu-cheng/latex-action@v3
-        with:
-          latexmk_use_pdflatex: true
-          root_file: dcresume.tex
+      # The TeX container cannot see git, so write down what the footer and
+      # the reproducible-build timestamp need before entering it.
+      - name: Record version and commit time
+        run: |
+          {
+            echo "VERSION := $(git describe --tags --always)"
+            echo "SOURCE_DATE_EPOCH := $(git log -1 --format=%ct)"
+          } > ci.mk
+          cat ci.mk
 
-      - name: Release Resume
-        uses: softprops/action-gh-release@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build both variants
+        uses: xu-cheng/texlive-action@v2
         with:
-          tag_name: ${{ github.ref_name }}
-          release_name: Corley Resume - ${{ github.ref_name }}
-          files: dcresume.pdf
+          run: |
+            apk add --no-cache make
+            make pdf
+
+      - name: Check pages, layout, fonts and text extraction
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+          make check
+
+      # Hosts go down and some refuse scripts, so a dead link is reported
+      # without blocking a release.
+      - name: Check links
+        continue-on-error: true
+        run: make links
+
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdfs
+          path: dist/*.pdf
+          if-no-files-found: error
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download PDFs
+        uses: actions/download-artifact@v4
+        with:
+          name: resume-pdfs
+          path: dist
+
+      - name: Release resume
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Corley Resume - ${{ github.ref_name }}
+          files: dist/*.pdf
+          fail_on_unmatched_files: true
