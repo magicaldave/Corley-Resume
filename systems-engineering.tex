@@ -36,9 +36,10 @@ cross-compilation, GitHub Actions, GitLab CI, Sigstore Cosign}
   \item Lowers hot script calls to native code through JIT hooks written in Rust; adds a dialect front end (comprehensions, slices, destructuring) whose tooling reports in original source coordinates.
 \end{bullets}
 
-\entry{OpenMW}{open-source reimplementation of the Morrowind engine, C++}{Open source \textperiodcentered{} merged upstream}
+\entry{OpenMW}{open-source reimplementation of the Morrowind engine, C++}{Open source \textperiodcentered{} 2023 -- present}
 \entrymeta{\href{https://gitlab.com/OpenMW/openmw}{gitlab.com/OpenMW/openmw} \textperiodcentered{} described on the project's blog as a core developer (\href{https://openmw.org/2024/from-bsp-to-esp-how-s3ctor-abused-quake-editors-to-redefine-the-morrowind-modding-experience/}{Nov 2024})}
 \begin{bullets}
+  \item In review: replacing the engine's Lua scripting layer with Luau (\href{https://gitlab.com/OpenMW/openmw/-/merge_requests/5618}{!5618}, open draft, about 100,000 lines).
   \item Merged: object movement in the OpenMW-CS editor (\href{https://gitlab.com/OpenMW/openmw/-/merge_requests/3675}{!3675}); unified instance drop modes with an in-editor tooltip (\href{https://gitlab.com/OpenMW/openmw/-/merge_requests/4350}{!4350}); fixes so cell water height is saved whenever the user changed it and journal records are serialized first when saving plugins.
   \item Prototype, not merged: a networking layer and headless server on the \href{https://github.com/DreamWeave-MP/DreamWeave}{DreamWeave fork}, toward upstream multiplayer.
 \end{bullets}

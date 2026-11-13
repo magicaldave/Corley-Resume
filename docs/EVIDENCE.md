@@ -125,3 +125,17 @@ Added 2026-11-13 to the languages line of the `ai-automation`, `backend` and
 and SQL in college coursework, and TypeScript in one project. No public
 repository was checked. Listed after the primary languages, with no project
 or level claimed; be ready to show or discuss a sample in an interview.
+
+## OpenMW Luau migration, contribution dates, AsHyAmS
+
+Added 2026-11-13 from links the owner supplied.
+
+| Claim | Status | Source |
+|---|---|---|
+| Proposal to replace OpenMW's Lua scripting layer with Luau; open draft, about 100,000 lines; review guide and developer docs | verified | MR !5618 "Draft: Lua: Small refactor of approximately 100K lines", by magicaldave1, opened 2026-09-18, read 2026-11-13. It is a draft: say "proposal" or "in review", never "merged" or "migrated" |
+| OpenMW contributions "2023 to present" | verified | MR !3617 by magicaldave1, opened 2023-11-26 |
+| AsHyAmS: Rust crawler, diff engine and site generator indexing a network of independently published sites, no central server or registry, refreshed every six hours, state kept in Git, JSON Schema validation | verified | README, `tools/dreamweave-network/` and `.github/workflows/network.yml` of github.com/DreamWeave-MP/AsHyAmS, read 2026-11-13; all 50 commits read are the owner's |
+
+This supersedes the earlier note that no date range and no Lua work on OpenMW
+could be evidenced. The "merged upstream" label on the OpenMW entries became
+"2023 -- present"; the bullets still say which work is merged.
