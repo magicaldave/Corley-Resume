@@ -21,7 +21,7 @@ Podman and Docker, release packaging for Linux, Windows, macOS and ARM64}
 \section{Selected Engineering Work}
 
 \entry{Rook}{permission-gated AI engineering agent for chat and code review}{Independent \textperiodcentered{} proprietary \textperiodcentered{} 2026}
-\entrymeta{DreamWeave. Private source; releases 0.1.0 to 0.3.2 tagged; \verify{not yet in production use}. Written in Luau on my own runtime, Jess.}
+\entrymeta{DreamWeave. Private source; releases 0.1.0 to 0.3.2 tagged; in use on the DreamWeave-MP Discord. Written in Luau on my own runtime, Jess.}
 \begin{bullets}
   \item Designed an LLM-backed service that answers engineering questions in Discord and reads and reviews pull requests, issues and CI on GitHub, as a native Luau application with no Python or Node agent framework.
   \item Put authorization in code, not in the prompt: every outbound action is checked against a human-reviewed, version-controlled grant ledger, reread before each decision. A malformed grant is ignored and reported, never widened, and nothing the agent reads at runtime can add one.

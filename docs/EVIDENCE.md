@@ -19,7 +19,7 @@ or inferred; needs checking before the resume is sent).
 | Merged instance drop modes and tooltip, MR !4350 | verified | commits by Dave Corley under the merge "Task #8141: Merge instance drop modes", OpenMW master |
 | Water height saved whenever the user adjusted it; esmtool logging fix | verified | commits by Dave Corley, 2024-02-22, OpenMW master |
 | Journal records serialized first when saving plugins | verified | commit by Dave Corley, 2024-10-16, OpenMW master |
-| Networking layer and headless server on the DreamWeave fork (prototype, not merged) | **unverified** | owner's account only; the branch was not readable |
+| Networking layer and headless server on the DreamWeave fork (prototype, not merged) | verified | `apps/openmw/mwnet/` (client, server, network messages, ESM serialization) on branch DREAM-BIRTH-26 of github.com/DreamWeave-MP/DreamWeave, read 2026-11-13; "headless" is the owner's description |
 
 Not used, no evidence found: a date range for the contributions; work on the
 Lua API; work on OpenMW's Linux builds or packaging; any OpenMW CI or ccache
@@ -50,7 +50,7 @@ organization and project names and were not opened. Run `make links`.
 |---|---|---|
 | Releases 0.1.0 to 0.3.2 tagged | verified | tag list of the private repository, supplied by the owner |
 | Discord and GitHub integration; grant ledger; hash-bound profile; durable write intents; receipts, budgets, emergency stop; 83 offline test cases | owner records | project records dated 2026-10-29 and 2026-11-05 |
-| "Not yet in production use" | **unverified** | the records say not deployed as of 2026-11-05; later tags exist |
+| In use on the DreamWeave-MP Discord | owner stated | the owner confirmed on 2026-11-13 that Rook is live there; replaces "not yet in production use" |
 | "Specified and checked AI-assisted implementation against written requirements and acceptance tests" | **unverified** | project records describe AI-assisted work directed by the owner; confirm the precise scope of specification and validation |
 
 Rook's source is private. The resume describes what it does and how it is
@@ -69,7 +69,9 @@ governed, and names nothing about its repositories, host or model.
 Carried over unchanged in substance from the previous resume: Conduent
 (Mar 2017 to Jan 2019), United States Cellular (2019), Holberton Tulsa
 (2022 to 2023), Tulsa Tech Riverside (2015 to 2016). None was independently
-checked. Neither training entry is a degree. "A+ certification course" names
+checked. On 2026-11-13 the owner confirmed the Conduent dates, and confirmed
+that the A+ entry was the course only: no certification was earned, so the
+entry stays worded as a course. Neither training entry is a degree. "A+ certification course" names
 a course; if the certification itself was earned, say so, and if not, leave it.
 
 ## Customer-facing engineering variant
@@ -107,9 +109,8 @@ invented for the independent projects.
 
 Added 2026-11-13. `backend.tex` and `games.tex` reuse only claims already in
 this ledger, reworded for the role; they add no new facts. The games variant
-carries the same unverified DreamWeave networking prototype as
-`systems-engineering`; the backend variant carries the unverified "not yet in
-production use" note for Rook.
+carries the DreamWeave networking prototype and the backend variant carries
+Rook's deployment status, both since confirmed above.
 
 ## Header location
 
