@@ -1,4 +1,10 @@
+/build/
+/dist/
+/ci.mk
+/personal.local.tex
 /*.aux
 /*.log
 /*.out
 /*.pdf
+/*.fls
+/*.fdb_latexmk
