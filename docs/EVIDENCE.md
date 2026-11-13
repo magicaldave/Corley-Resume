@@ -72,6 +72,29 @@ Carried over unchanged in substance from the previous resume: Conduent
 checked. Neither training entry is a degree. "A+ certification course" names
 a course; if the certification itself was earned, say so, and if not, leave it.
 
+## Customer-facing engineering variant
+
+The `customer-engineering` resume reuses `content/experience.tex` and
+`content/education.tex` without changing dates, employers or credentials. Its
+customer-facing positioning rests on the existing Conduent Tier 2 technical
+support and U.S. Cellular frontline customer service entries. Both employment
+entries remain **unverified** externally; confirm dates, title and mentoring
+before sending. Do not present the A+ *course* as an earned certification.
+
+| Claim in new variant | Status | Source |
+|---|---|---|
+| Conduent: Tier 2, multi-platform hardware/software troubleshooting, complex cases, mentoring | unverified (carried over) | `content/experience.tex`; employment and training section above |
+| U.S. Cellular: frontline customer service, billing/technical triage and escalation | unverified (carried over) | `content/experience.tex`; employment and training section above |
+| Rook: Discord/GitHub engineering assistant; permissions, ambiguous-write safeguards, budgets, receipts, 83 offline tests | owner records | Rook section above; private project records checked on 2026-11-05 |
+| OpenMW: object movement, instance drop modes and tooltip; plugin save fixes | verified | OpenMW section above |
+| Jess: one-binary runtime/toolchain and signed multi-platform release archives | owner records | Jess section above |
+| vfstool: VFS CLI and CI drift check; StroggForge: reusable signed release workflows | owner records / verified | Tools and StroggForge sections above |
+
+The summary's claim to communicate technical problems in practical terms is a
+professional positioning statement, not an independently documented business
+outcome. No customer-facing role, production deployment or measured impact was
+invented for the independent projects.
+
 ## Asked for, not included
 
 - **ccache optimization.** No evidence of authorship was found.

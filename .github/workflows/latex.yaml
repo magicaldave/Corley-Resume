@@ -1,6 +1,6 @@
 name: Build resume
 
-# Every push and pull request builds and checks both variants. A tag also
+# Every push and pull request builds and checks all variants. A tag also
 # publishes them as a GitHub release.
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
           } > ci.mk
           cat ci.mk
 
-      - name: Build both variants
+      - name: Build all resume variants
         uses: xu-cheng/texlive-action@v2
         with:
           run: |

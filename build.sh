@@ -2,7 +2,7 @@
 # Build without a local TeX install: run `make pdf` inside the TeX Live
 # container, then check the results on the host.
 #
-#   bash build.sh                     both variants
+#   bash build.sh                     all resume variants
 #   bash build.sh LOCATION="Tulsa, OK"  any make variable passes through
 #
 # With TeX Live installed locally, plain `make` does the same job.

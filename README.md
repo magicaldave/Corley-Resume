@@ -1,11 +1,12 @@
 # Corley Resume
 
-Dave Corley's resume, as LaTeX, in two variants built from one set of sources:
+Dave Corley's resume, as LaTeX, in three variants built from one set of sources:
 
 | Variant | For | Output |
 |---|---|---|
 | `ai-automation` | AI integration, automation, developer tooling | `dist/Dave-Corley-Resume-ai-automation.pdf` |
 | `systems-engineering` | Rust, Lua/Luau, runtimes, engine work, cross-platform delivery | `dist/Dave-Corley-Resume-systems-engineering.pdf` |
+| `customer-engineering` | Customer-facing engineering, Tier 2 technical support, integrations, troubleshooting | `dist/Dave-Corley-Resume-customer-engineering.pdf` |
 
 ## Layout
 
@@ -14,6 +15,7 @@ resume.cls               styling: fonts, colours, header, sections, entries
 personal.tex             name, location, contact details, links
 ai-automation.tex        variant: summary, capabilities, selected work
 systems-engineering.tex  variant: summary, capabilities, selected work
+customer-engineering.tex   variant: support, customer communication, integrations
 content/                 sections every variant shares (experience, education)
 cover-letter.tex         cover letter template
 scripts/check.sh         checks on the built PDFs
@@ -29,7 +31,7 @@ Makefile; CI picks it up from there.
 With TeX Live and poppler-utils installed:
 
 ```
-make            # build both PDFs into dist/ and check them
+make            # build all three PDFs into dist/ and check them
 make review     # build/review/*.pdf with unverified claims highlighted
 make cover      # the cover letter template
 make links      # request every URL in the sources
@@ -72,9 +74,9 @@ source and unwrap it, or cut it. `docs/EVIDENCE.md` lists what is open.
 
 ## Release
 
-Push a tag. CI builds and checks both variants and attaches the two PDFs to a
+Push a tag. CI builds and checks all three variants and attaches the three PDFs to a
 GitHub release named for the tag. Pushes to `main` and pull requests run the
-same build and keep the PDFs as workflow artifacts.
+same build and keep all three PDFs as workflow artifacts.
 
 Builds are reproducible: the footer date and the PDF timestamps come from the
 commit, so one commit always produces the same bytes.
