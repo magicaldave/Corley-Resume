@@ -117,3 +117,11 @@ Rook's deployment status, both since confirmed above.
 Changed 2026-11-13 from "Oklahoma, USA" to "Remote (US), relocating to Miami,
 FL" for every variant: the owner is targeting remote US roles and roles in the
 Miami area.
+
+## Python, SQL and TypeScript
+
+Added 2026-11-13 to the languages line of the `ai-automation`, `backend` and
+`customer-engineering` variants. **Owner stated** that day: substantial Python
+and SQL in college coursework, and TypeScript in one project. No public
+repository was checked. Listed after the primary languages, with no project
+or level claimed; be ready to show or discuss a sample in an interview.
