@@ -16,7 +16,7 @@ to the OpenMW game engine.}
 limits enforced outside the model; offline testing against mock models}
 \skill{Automation and CI/CD}{GitHub Actions (reusable workflows, composite actions), GitLab CI, Sigstore Cosign,
 Podman and Docker, release packaging for Linux, Windows, macOS and ARM64}
-\skill{Languages and tools}{Rust, Lua / LuaJIT / Luau, C++, Bash, Python; Git, Cargo, CMake}
+\skill{Languages and tools}{Rust, Lua / LuaJIT / Luau, C++, Bash; Git, Cargo, CMake}
 
 \section{Selected Engineering Work}
 
@@ -27,7 +27,7 @@ Podman and Docker, release packaging for Linux, Windows, macOS and ARM64}
   \item Put authorization in code, not in the prompt: every outbound action is checked against a human-reviewed, version-controlled grant ledger, reread before each decision. A malformed grant is ignored and reported, never widened, and nothing the agent reads at runtime can add one.
   \item Made failure safe: an instruction profile that no longer matches the SHA-256 of its reviewed sources stops startup, and an ambiguous GitHub write (timeout, 5xx, crash) blocks any repeat until an operator reconciles it.
   \item Added per-reply receipts (latency, tokens, estimated cost), daily budgets and an emergency stop. Tested offline against a mock model that obeys every injected instruction: 83 cases, run from source and from the packed artifact.
-  \item \verify{Directed the implementation through AI coding agents, against written specifications and acceptance tests.}
+  \item \verify{Specified and checked AI-assisted implementation against written requirements and acceptance tests.}
 \end{bullets}
 
 \entry{StroggForge}{shared build and release infrastructure}{Independent \textperiodcentered{} open source \textperiodcentered{} 2026}

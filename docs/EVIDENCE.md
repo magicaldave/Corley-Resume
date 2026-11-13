@@ -51,7 +51,7 @@ organization and project names and were not opened. Run `make links`.
 | Releases 0.1.0 to 0.3.2 tagged | verified | tag list of the private repository, supplied by the owner |
 | Discord and GitHub integration; grant ledger; hash-bound profile; durable write intents; receipts, budgets, emergency stop; 83 offline test cases | owner records | project records dated 2026-10-29 and 2026-11-05 |
 | "Not yet in production use" | **unverified** | the records say not deployed as of 2026-11-05; later tags exist |
-| "Directed the implementation through AI coding agents" | **unverified** | the records describe agent sessions working at the owner's request; the owner should confirm the wording |
+| "Specified and checked AI-assisted implementation against written requirements and acceptance tests" | **unverified** | project records describe AI-assisted work directed by the owner; confirm the precise scope of specification and validation |
 
 Rook's source is private. The resume describes what it does and how it is
 governed, and names nothing about its repositories, host or model.

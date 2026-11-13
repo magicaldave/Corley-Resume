@@ -173,11 +173,13 @@
 
 % --- Footer ---------------------------------------------------------------
 \newcommand{\makefooter}{%
-  \vfill
-  {\fontsize{7}{9}\selectfont\color{s3muted}%
-   \resumedate\resume@sep\resumeversion
-   \resume@ifset{resumesource}{\resume@sep\href{\resumesource}{built from source}}%
-   \ifresume@review\resume@sep REVIEW BUILD: highlighted claims need checking\fi\par}}
+  % Normal resumes have no generated build metadata or source-control footer.
+  % A review build still makes unverified claims visible.
+  \ifresume@review
+    \vfill
+    {\fontsize{7}{9}\selectfont\color{s3muted}%
+     REVIEW BUILD: highlighted claims need checking\par}%
+  \fi}
 
 % --- Cover letter ---------------------------------------------------------
 % \begin{coverletter}{Company}{Position}{Contact person} ... \end{coverletter}
