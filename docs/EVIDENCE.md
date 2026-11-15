@@ -139,3 +139,10 @@ Added 2026-11-13 from links the owner supplied.
 This supersedes the earlier note that no date range and no Lua work on OpenMW
 could be evidenced. The "merged upstream" label on the OpenMW entries became
 "2023 -- present"; the bullets still say which work is merged.
+
+## Customer engineering: DoorDash-targeted refinement (2026-11-15)
+
+- **Conduent investigations and escalation:** owner confirmed that Tier 2 duties included reproducing and documenting customer issues, keeping customers updated, escalating engineering-level problems, and mentoring colleagues. The expanded bullets appear **only** in `customer-engineering.tex` via `\conduentbullets`; the other variants retain the previous shared description. Employment history has not been independently verified.
+- **API and language scope:** owner confirms JavaScript work primarily in **Node.js**, plus one React/TypeScript project built with Tauri (not a claim of professional frontend experience). Python and SQL remain **coursework**, not advertised as production specialties. The GitHub/Discord integrations in Rook are the basis for the API/JSON workflows description.
+- **Independent knowledge bases:** owner reports authoring and extensively developing public project documentation in 2026. Public documentation was checked for [H3lp Yours3lf](https://dreamweave-mp.github.io/S3ctors-S3cret-St4sh/h3lp_yours3lf/docs/) (getting started, concepts, APIs, examples) and [Jess](https://dreamweave-mp.github.io/jess/docs/) (getting started, troubleshooting, API and CLI reference). [l3i documentation](https://dreamweave-mp.github.io/l3i/home/) is owner-supplied; its content was not independently retrieved during this pass. This is **independent developer documentation**, not knowledge-base work performed at Conduent.
+- The earlier vfstool/StroggForge entry remains true and in other variants; it was replaced in the customer-engineering variant to prioritize documentation relevant to customer-facing roles.

@@ -1,23 +1,31 @@
 % Variant: customer-facing engineering, technical support, and integration.
 \documentclass{resume}
 \resumetitle{Customer Solutions Engineer}
-\resumekeywords{Customer solutions engineering, technical support, Tier 2, troubleshooting, application support, client communication, customer success, systems integration, API automation, Rust, C++, Luau}
+\resumekeywords{Customer solutions engineering, technical support, Tier 2, engineering escalation, application support, knowledge base documentation, API integration, Node.js, Rust, C++, Luau}
 \begin{document}
 \makeheader
 
 \section{Summary}
-\summary{Customer-facing software engineer with previous Tier 2 technical support and frontline customer
-service experience. I investigate hardware and software issues, explain technical problems in practical terms,
-and build integrations, developer tooling and automation in Rust, C++ and Lua/Luau. My work spans
-customer-visible editor improvements, cross-platform tools and a Discord/GitHub engineering assistant.}
+\summary{Customer-facing software engineer with professional Tier 2 support and frontline customer service
+experience. I reproduce technical issues, document investigations, escalate engineering-level problems and
+keep customers informed. I also build API integrations, automation, developer tooling and public technical
+documentation.}
 
 \section{Technical Capabilities}
-\skill{Support and communication}{Tier 2 troubleshooting, complex case ownership, issue triage and escalation,
-mentoring new teammates, user-focused problem solving}
-\skill{Integrations and automation}{GitHub and Discord integrations, LLM tool-calling workflows, developer
-utilities, command-line tooling, CI/CD, offline test suites}
-\skill{Engineering}{Rust, C++, Lua / Luau, Python, SQL, TypeScript, Bash; Git, Linux, Windows, macOS, GitHub Actions}
+\skill{Support and communication}{Tier 2 case ownership, fault reproduction, documentation, engineering
+escalation, customer updates, peer mentoring, public developer knowledge bases}
+\skill{Integrations and automation}{GitHub and Discord APIs, JSON-based workflows, LLM tool calling,
+command-line tools, CI/CD, automated testing}
+\skill{Engineering}{Rust, C++, Lua / Luau, JavaScript (Node.js), Bash; React/TypeScript (one project),
+Python and SQL (coursework); Git, Linux, Windows, macOS}
 
+% Use a more detailed, owner-confirmed Tier 2 description for this variant only.
+% Other variants keep the shared experience text unchanged.
+\newcommand{\conduentbullets}{%
+  \item Owned complex Tier 2 hardware and software cases across platforms: reproduced customer-reported
+  issues, documented troubleshooting and kept customers informed through resolution.
+  \item Escalated engineering-level defects with reproducible findings and mentored newer support advisors.
+}
 % Put paid customer-facing experience ahead of independent engineering work.
 \input{content/experience}
 
@@ -42,10 +50,10 @@ utilities, command-line tooling, CI/CD, offline test suites}
   \item Built a single-binary runtime, type checker, test runner, package tool and style checker in Rust and Luau; shipped signed archives for Linux, macOS, Windows and ARM64 devices.
 \end{bullets}
 
-\entry{vfstool and StroggForge}{troubleshooting and release automation}{Independent \textperiodcentered{} open source}
-\entrymeta{\href{https://github.com/DreamWeave-MP/vfstool}{github.com/DreamWeave-MP/vfstool} \textperiodcentered{} \href{https://github.com/DreamWeave-MP/StroggForge}{github.com/DreamWeave-MP/StroggForge}}
+\entry{Developer Knowledge Bases}{technical guides and API documentation}{Independent \textperiodcentered{} open source \textperiodcentered{} 2026}
+\entrymeta{\href{https://dreamweave-mp.github.io/jess/docs/}{Jess docs} \textperiodcentered{} \href{https://dreamweave-mp.github.io/l3i/home/}{l3i docs} \textperiodcentered{} \href{https://dreamweave-mp.github.io/S3ctors-S3cret-St4sh/h3lp_yours3lf/docs/}{H3lp Yours3lf docs}}
 \begin{bullets}
-  \item Built a virtual-file-system command-line tool with a lockfile drift check for CI; also built shared release workflows that package, portability-check, sign and scan Rust project artifacts.
+  \item Built public developer documentation for my runtime, binder and modding utilities, including getting-started guides, API references, examples and troubleshooting information.
 \end{bullets}
 
 \input{content/education}
